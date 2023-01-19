@@ -1,0 +1,140 @@
+<!--Type html5-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herd Mate: A Coding Challenge</title>
+
+    <!-- Webpage Icon -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--BOOTSTRAP Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Dev Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <link href="/css/prism.css" rel="stylesheet">
+
+    <!--My Style Sheet: ALWAYS LAST-->
+    <link href="/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="mainnav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/favicon.png" height="40"> Herd Mate
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon-kls">
+                        <i class="bi bi-list"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/app.html">The App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--REMEMBER TO UPDATE THIS LINK EVERY TIME-->
+                            <a class="nav-link" href="https://github.com/kamszeliga">The Repo</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--REMEMBER TO UPDATE THIS LINK EVERY TIME-->
+                            <a class="nav-link" href="https://astonishing-pteranodon.netlify.app/">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://astonishing-pteranodon.netlify.app/">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content container mt-3">
+        <div class="row">
+            <h1 class="border-bottom border-2 border-dark">The Code</h1>
+            <!--Source Code-->
+            <div class="col-12 col-lg-8">
+                <pre class="line-numbers">
+                <code class="language-js">
+                    function displayMessage() {
+                        let msg = document.getElementById('message').value;
+                    
+                        Swal.fire(
+                            {
+                                backdrop: false,
+                                title: 'Herd Mate',
+                                text: msg,
+                            }
+                        );
+                    }
+                </code>
+            </pre>
+            </div>
+            <!--Code Description-->
+            <div class="col-12 col-lg-4">
+                <p>The code is structured in one function.</p>
+                <h5><code>displayMessage()</code></h5>
+                <p>This function displays the message in a sweet alert.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid footer-main">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 align-items-center py-3">
+                <div
+                    class="col d-flex justify-content-center text-secondary justify-content-md-start order-last order-md-first">
+                    &copy; 2023 Kam Szeliga
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <img src="/img/FULL_ptera_logo.png" height="50">
+                </div>
+                <div class="col-12 col-md d-flex justify-content-center justify-content-md-end">
+                    <a href="#" target="_blank" class="socialicons"><i class="bi bi-linkedin p-2"></i></a>
+                    <a href="#" target="_blank" class="socialicons"><i class="bi bi-twitter p-2"></i></a>
+                    <a href="#" target="_blank" class="socialicons"><i class="bi bi-youtube p-2"></i></a>
+                    <a href="#" target="_blank" class="socialicons"><i class="bi bi-instagram p-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--BOOTSTRAP Script: Always at the bottom above the closing body tag-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!--Prism JS-->
+
+    <script src="/js/prism.js"></script>
+
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+:root {
+    --kls-primary-color: #d2e2d1;
+    --kls-secondary-color: #9BB899;
+    --kls-highlight-color: #f2ffb6;
+
+    --kls-nav-toggler-color: var(--kls-highlight-color);
+    --kls-nav-toggler-glow: #edffeb;
+
+    --kls-dark-color: #353433;
+    --kls-darker-color: #1f1e1e;
+    --kls-light-color: #F0F0F0;
+    --kls-background-color: #fbfcf8;
+
+    /* --kls-title-font: 'Bebas Neue', sans-serif;
+    --kls-subtitle-font: 'Fira Sans', sans-serif;
+    --kls-heading-font: 'Bebas Neue', sans-serif;
+    --kls-body-font: 'Roboto', sans-serif;
+
+    --kls-font-size: 1.2rem;
+    --kls-font-weight: 400;
+    --kls-line-height: 1.5rem;
+
+    --kls-title-color: var(--kls-dark-color); */
+
+}
+
+/* Sticky Footer */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+    margin-top: 1rem;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/*ALWAYS start with above in your projects*/
+
+/*MAIN NAV START*/
+#mainnav {
+    background-color: var(--kls-darker-color);
+}
+
+#mainnav button {
+    border-color: var(--kls-primary-color);
+}
+
+.navbar-toggler {
+    color: var(--kls-nav-toggler-glow);
+}
+
+.navbar-toggler-icon-kls {
+    color: var(--kls-nav-toggler-color);
+    font-size: 1.5rem;
+}
+/*MAIN NAV END*/
+
+
+/*START: MAIN BODY*/
+
+.appLogo {
+    max-width: 400px;
+
+}
+
+.checkList {
+    list-style-type: none;
+}
+
+.checkList > li i {
+    color: var(--kls-secondary-color);
+    padding-right: .5rem;
+}
+
+.devIcons {
+    font-size: 4rem;
+    padding-right: .5rem;
+}
+/*END: MAIN BODY*/
+
+
+
+
+
+/*START: Footer */ 
+
+.footer-main {
+    background-color: var(--kls-darker-color);
+    color: var(--kls-light-color)
+}
+
+.footer-main a.socialicons {
+    color: var(--kls-light-color);
+    opacity: 1;
+    transition: color 0.25s ease-in;
+}
+
+.footer-main a.socialicons:hover {
+    color: var(--kls-secondary-color);
+    opacity: 1;
+}
+
+.socialicons {
+    font-size: 1.5rem;
+}
+/*END: Footer */ 
