@@ -106,16 +106,16 @@ function buildDropdown() {
 
 function displayStats(eventsArray) {
     let totalAttendance = calculateTotal(eventsArray);
-    let averageAttendance = 0;
-    let mostAttendance = 0;
-    let leastAttendance = 0;
+    let averageAttendance = calculateAverage(eventsArray);
+    let mostAttendance = calculateMost(eventsArray);
+    let leastAttendance = calculateMin(eventsArray);
 
     // insert math here
 
-    document.getElementById('total'), textContent = totalAttendance;
-    document.getElementById('average'), textContent = averageAttendance;
-    document.getElementById('most'), textContent = mostAttendance;
-    document.getElementById('least'), textContent = leastAttendance;
+    document.getElementById('total').textContent = totalAttendance;
+    document.getElementById('average').textContent = averageAttendance;
+    document.getElementById('most').textContent = mostAttendance;
+    document.getElementById('least').textContent = leastAttendance;
 }
 
 function calculateTotal(eventsArray) {
@@ -126,4 +126,47 @@ function calculateTotal(eventsArray) {
         let currentEvent = eventsArray[index];
         sum = sum + currentEvent.attendance;
     }
+
+    return sum;
+}
+
+function calculateAverage(eventsArray) {
+
+    let total = calculateTotal(eventsArray);
+    let aver = total / eventsArray.length;
+    // for (let index = 0; index < eventsArray.length; index++) {
+    //     let currentEvent = eventsArray[index];
+    //     sum = sum + currentEvent.attendance;
+    // }
+
+    // aver = sum / eventsArray.length;
+    return aver;
+}
+
+function calculateMost(eventsArray) {
+    let max = eventsArray[0].attendance;
+
+    for (let index = 0; index < eventsArray.length; index++) {
+        let currentEvent = eventsArray[index];
+
+        if (currentEvent.attendance > max) {
+        max = currentEvent.attendance;
+    }
+}
+    return max;
+
+}
+
+function calculateMin(eventsArray) {
+    let min = eventsArray[0].attendance;
+
+    for (let index = 0; index < eventsArray.length; index++) {
+        let currentEvent = eventsArray[index];
+
+        if (currentEvent.attendance < min) {
+        min = currentEvent.attendance;
+    }
+}
+    return min;
+
 }
