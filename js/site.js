@@ -102,6 +102,8 @@ function buildDropdown() {
     }
     displayStats(currEvents);
 
+    displayEventData(currEvents);
+
 }
 
 function displayStats(eventsArray) {
@@ -111,11 +113,11 @@ function displayStats(eventsArray) {
     // let leastAttendance = calculateMin(eventsArray);
 
     let stats = calculateStats(eventsArray);
-    
-    document.getElementById('total').textContent = stats.totalAttendance;
-    document.getElementById('average').textContent = stats.averageAttendance;
-    document.getElementById('most').textContent = stats.mostAttendance;
-    document.getElementById('least').textContent = stats.leastAttendance;
+
+    document.getElementById('total').textContent = stats.totalAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
+    document.getElementById('average').textContent = stats.averageAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
+    document.getElementById('most').textContent = stats.mostAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
+    document.getElementById('least').textContent = stats.leastAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
 }
 
 function calculateStats(eventsArray){
@@ -148,6 +150,39 @@ function calculateStats(eventsArray){
 }
     return stats;   
 }
+
+function displayEventData (eventsArray){
+    
+    let tableBody = document.getElementById('eventTableBody');
+    const tableRowTemplate = document.getElementById('eventTableRowTemplate');
+
+    tableBody.innerHTML = '';
+
+    for(let i = 0; i < eventsArray.length; i++) {
+        
+        let eventRow = document.importNode(tableRowTemplate.content, true)
+        let currentEvent = eventsArray[i];
+
+        let tableCells = eventRow.querySelectorAll('td')
+
+        tableCells[0].textContent = currentEvent.event;
+        tableCells[1].textContent = currentEvent.city;
+        tableCells[2].textContent = currentEvent.state;
+        tableCells[3].textContent = currentEvent.attendance;
+        tableCells[4].textContent = currentEvent.date;
+    }
+     tableBody.appendChild(eventRow);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 // function calculateTotal(eventsArray) {
