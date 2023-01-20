@@ -93,7 +93,7 @@ footer {
 }
 
 .buttonColor {
-    background-color: var(--kls-secondary-color);
+    background-color: var(--kls-dark-color);
     color: var(--kls-light-color);
 }
 
