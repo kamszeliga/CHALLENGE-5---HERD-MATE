@@ -163,15 +163,16 @@ function displayEventData (eventsArray){
         let eventRow = document.importNode(tableRowTemplate.content, true)
         let currentEvent = eventsArray[i];
 
-        let tableCells = eventRow.querySelectorAll('td')
+        let tableCells = eventRow.querySelectorAll("td")
 
         tableCells[0].textContent = currentEvent.event;
         tableCells[1].textContent = currentEvent.city;
         tableCells[2].textContent = currentEvent.state;
         tableCells[3].textContent = currentEvent.attendance;
         tableCells[4].textContent = currentEvent.date;
-    }
-     tableBody.appendChild(eventRow);
+    
+        tableBody.appendChild(eventRow); 
+}    
 }
 
 

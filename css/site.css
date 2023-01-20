@@ -86,6 +86,21 @@ footer {
     font-size: 4rem;
     padding-right: .5rem;
 }
+
+.tableDark {
+    background-color: var(--kls-secondary-color);
+    color: var(--kls-light-color);
+}
+
+.buttonColor {
+    background-color: var(--kls-secondary-color);
+    color: var(--kls-light-color);
+}
+
+.buttonColor:hover {
+    background-color: var(--kls-highlight-color);
+    color: var(--kls-darker-color);
+}
 /*END: MAIN BODY*/
 
 
