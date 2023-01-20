@@ -114,13 +114,13 @@ function displayStats(eventsArray) {
 
     let stats = calculateStats(eventsArray);
 
-    document.getElementById('total').textContent = stats.totalAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
-    document.getElementById('average').textContent = stats.averageAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
-    document.getElementById('most').textContent = stats.mostAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
-    document.getElementById('least').textContent = stats.leastAttendance.toLocaleString("en-US", {maximumFractionDigits: 0, minimumFractionDigits: 0,} );
+    document.getElementById('total').textContent = stats.totalAttendance.toLocaleString("en-US", { maximumFractionDigits: 0, minimumFractionDigits: 0, });
+    document.getElementById('average').textContent = stats.averageAttendance.toLocaleString("en-US", { maximumFractionDigits: 0, minimumFractionDigits: 0, });
+    document.getElementById('most').textContent = stats.mostAttendance.toLocaleString("en-US", { maximumFractionDigits: 0, minimumFractionDigits: 0, });
+    document.getElementById('least').textContent = stats.leastAttendance.toLocaleString("en-US", { maximumFractionDigits: 0, minimumFractionDigits: 0, });
 }
 
-function calculateStats(eventsArray){
+function calculateStats(eventsArray) {
 
     let sum = 0;
     let aver = 0;
@@ -129,9 +129,9 @@ function calculateStats(eventsArray){
 
     for (let index = 0; index < eventsArray.length; index++) {
         let currentEvent = eventsArray[index];
-         sum = sum + currentEvent.attendance;
+        sum = sum + currentEvent.attendance;
 
-         if (currentEvent.attendance > max) {
+        if (currentEvent.attendance > max) {
             max = currentEvent.attendance;
         }
 
@@ -147,19 +147,19 @@ function calculateStats(eventsArray){
         averageAttendance: aver,
         mostAttendance: max,
         leastAttendance: min,
-}
-    return stats;   
+    }
+    return stats;
 }
 
-function displayEventData (eventsArray){
-    
+function displayEventData(eventsArray) {
+
     let tableBody = document.getElementById('eventTableBody');
     const tableRowTemplate = document.getElementById('eventTableRowTemplate');
 
     tableBody.innerHTML = '';
 
-    for(let i = 0; i < eventsArray.length; i++) {
-        
+    for (let i = 0; i < eventsArray.length; i++) {
+
         let eventRow = document.importNode(tableRowTemplate.content, true)
         let currentEvent = eventsArray[i];
 
@@ -170,12 +170,12 @@ function displayEventData (eventsArray){
         tableCells[2].textContent = currentEvent.state;
         tableCells[3].textContent = currentEvent.attendance;
         tableCells[4].textContent = currentEvent.date;
-    
-        tableBody.appendChild(eventRow); 
-}    
+
+        tableBody.appendChild(eventRow);
+    }
 }
 
-function getEventData (){
+function getEventData() {
     let currentEvents = JSON.parse(localStorage.getItem('herdmateEventData'));
 
     if (currentEvents == null) {
@@ -186,27 +186,27 @@ function getEventData (){
     return currentEvents;
 }
 
-function getEvents(element){
+function getEvents(element) {
     let currentEvents = getEventData();
     let cityName = element.getAttribute('data-string');
 
     let filteredEvents = currentEvents;
 
-    if ( cityName != 'All'){
-     filteredEvents = currentEvents.filter(
-        function(event) {
-            if (cityName == event.city) {
-                return event;
+    if (cityName != 'All') {
+        filteredEvents = currentEvents.filter(
+            function (event) {
+                if (cityName == event.city) {
+                    return event;
+                }
             }
-        }
-    );      
-}
+        );
+    }
     document.getElementById('statsHeader').textContent = cityName;
     displayStats(filteredEvents);
     displayEventData(filteredEvents);
 }
 
-function saveEventData () {
+function saveEventData() {
     let eventName = document.getElementById('newEventName').value;
     let cityName = document.getElementById('newEventCity').value;
     let eventAttendance = parseInt(document.getElementById('newEventAttendance').value);
@@ -217,24 +217,24 @@ function saveEventData () {
 
     let stateSelect = document.getElementById('newEventState');
     let state = stateSelect.options[stateSelect.selectedIndex].text;
- 
+
     let newEvent = {
         attendance: eventAttendance,
         event: eventName,
         date: eventDate,
         state: state,
         city: cityName,
-        };
-    
-        let currentEvents = getEventData();
-        currentEvents.push(newEvent);
+    };
 
-        localStorage.setItem('herdmateEventData', JSON.stringify(currentEvents));
+    let currentEvents = getEventData();
+    currentEvents.push(newEvent);
 
-        buildDropdown();
-        document.getElementById('statsHeader').textContent = 'All';
-        document.getElementById('newEventForm').reset();
-} 
+    localStorage.setItem('herdmateEventData', JSON.stringify(currentEvents));
+
+    buildDropdown();
+    document.getElementById('statsHeader').textContent = 'All';
+    document.getElementById('newEventForm').reset();
+}
 
 
 
