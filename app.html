@@ -104,6 +104,7 @@
             <img src="/img/HERD_MATE.png" class="img-fluid p-3 rounded-5">
         </div>
       </div>
+      <button type="button" class="btn buttonColor mb-2" data-bs-toggle="modal" data-bs-target="#addEventInfo">Add Data</button>
       <div class="table-responsive rounded-3">
         <table class="table table-striped ">
             <thead class="tableDark">
@@ -119,7 +120,6 @@
                 <!--Table Template Goes Here-->
             </tbody>
         </table>
-        <button type="button" class="btn buttonColor" data-bs-toggle="modal" data-bs-target="#addEventInfo">New Event </button>
         </div>
     </main>
    
@@ -172,7 +172,8 @@ data-bs-toggle="modal" data-bs-target="#addEventInfo"
                 <h1 class="modal-title fs-5 p-2">Add a New Event:</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body"><form action="#">                
+            <div class="modal-body">
+                <form id="newEventForm">                
                 <p>Event Name:<label class="form-label" for="eventName"></label>
                     <input class="form-control mt-2" type="text" id="newEventName" placeholder="Event Name"
                         aria-label="eventName" required />
@@ -251,7 +252,7 @@ data-bs-toggle="modal" data-bs-target="#addEventInfo"
             </div></form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn buttonColor" id="sendButton">Save</button>
+                <button onclick="saveEventData()" data-bs-dismiss="modal" type="button" class="btn buttonColor" id="sendButton">Save</button>
             </div>
         </div>
     </div>

@@ -206,9 +206,35 @@ function getEvents(element){
     displayEventData(filteredEvents);
 }
 
+function saveEventData () {
+    let eventName = document.getElementById('newEventName').value;
+    let cityName = document.getElementById('newEventCity').value;
+    let eventAttendance = parseInt(document.getElementById('newEventAttendance').value);
+    let eventDate = document.getElementById('newEventDate').value;
 
+    eventDate = `${eventDate} 00:00`;
+    eventDate = new Date(eventDate).toLocaleDateString();
 
+    let stateSelect = document.getElementById('newEventState');
+    let state = stateSelect.options[stateSelect.selectedIndex].text;
+ 
+    let newEvent = {
+        attendance: eventAttendance,
+        event: eventName,
+        date: eventDate,
+        state: state,
+        city: cityName,
+        };
+    
+        let currentEvents = getEventData();
+        currentEvents.push(newEvent);
 
+        localStorage.setItem('herdmateEventData', JSON.stringify(currentEvents));
+
+        buildDropdown();
+        document.getElementById('statsHeader').textContent = 'All';
+        document.getElementById('newEventForm').reset();
+} 
 
 
 
