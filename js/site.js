@@ -70,7 +70,7 @@ function buildDropdown() {
     dropdownMenu.innerHTML = '';
 
     // get our events
-    let currEvents = events;
+    let currEvents = getEventData();
 
     // pull out just the city names
     let eventCities = currEvents.map((event) => event.city);
@@ -175,9 +175,36 @@ function displayEventData (eventsArray){
 }    
 }
 
+function getEventData (){
+    let currentEvents = JSON.parse(localStorage.getItem('herdmateEventData'));
 
+    if (currentEvents == null) {
+        currentEvents = events;
+        localStorage.setItem('herdmateEventData', JSON.stringify(currentEvents));
+    }
 
+    return currentEvents;
+}
 
+function getEvents(element){
+    let currentEvents = getEventData();
+    let cityName = element.getAttribute('data-string');
+
+    let filteredEvents = currentEvents;
+
+    if ( cityName != 'All'){
+     filteredEvents = currentEvents.filter(
+        function(event) {
+            if (cityName == event.city) {
+                return event;
+            }
+        }
+    );      
+}
+    document.getElementById('statsHeader').textContent = cityName;
+    displayStats(filteredEvents);
+    displayEventData(filteredEvents);
+}
 
 
 
