@@ -101,6 +101,16 @@ footer {
     background-color: var(--kls-highlight-color);
     color: var(--kls-darker-color);
 }
+
+.buttonColor2 {
+    background-color: var(--kls-secondary-color);
+    color: var(--kls-light-color);
+}
+
+.buttonColor2:hover {
+    background-color: var(--kls-highlight-color);
+    color: var(--kls-darker-color);
+}
 /*END: MAIN BODY*/
 
 
