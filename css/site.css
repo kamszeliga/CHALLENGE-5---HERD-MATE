@@ -111,6 +111,38 @@ footer {
     background-color: var(--kls-highlight-color);
     color: var(--kls-darker-color);
 }
+
+.mainDiv {
+    background-color: var(--kls-light-color);
+    color: var(--kls-darker-color);
+    border-radius: .5rem;
+}
+
+.mainBG {
+    background: url(/img/RainForest_blurred.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-color: black;
+}
+
+.bgDiv {
+    background-color: var(--kls-secondary-color);
+    color: var(--kls-light-color);
+}
+
+.sharkTop {
+    max-width: 400px;
+    margin-bottom: -1.5rem;
+}
+
+.mainContainer {
+    margin-bottom: 10rem;
+}
+
+.indexContainer {
+    margin-bottom: 5rem;
+}
 /*END: MAIN BODY*/
 
 
