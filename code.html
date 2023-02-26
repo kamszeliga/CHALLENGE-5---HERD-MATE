@@ -69,83 +69,12 @@
     </header>
 
     <main class="content container mt-3">
-        <div class="row">
-            <h1 class="border-bottom border-2 border-dark">The Code</h1>
-            <!--Code Description-->
-            <div class="col-lg-4">
-                <p>The code is structured in several functions.</p>
-                <h5><code>functionhere()</code></h5>
-                <p>This function......</p>
-            </div>
+        <h1 class="border-bottom border-2 border-dark">The Code</h1>
+        <div class="row row-cols-2">
             <!--Source Code-->
-            <div class="col-12 col-lg-8 order-last">
+            <div class="col">
                 <pre class="line-numbers">
                 <code class="language-js">
-                    var events = [{
-                        event: "ComicCon",
-                        city: "New York",
-                        state: "New York",
-                        attendance: 240000,
-                        date: "06/01/2017",
-                    },
-                    {
-                        event: "ComicCon",
-                        city: "New York",
-                        state: "New York",
-                        attendance: 250000,
-                        date: "06/01/2018",
-                    },
-                    {
-                        event: "ComicCon",
-                        city: "New York",
-                        state: "New York",
-                        attendance: 257000,
-                        date: "06/01/2019",
-                    },
-                    {
-                        event: "ComicCon",
-                        city: "San Diego",
-                        state: "California",
-                        attendance: 130000,
-                        date: "06/01/2017",
-                    },
-                    {
-                        event: "ComicCon",
-                        city: "San Diego",
-                        state: "California",
-                        attendance: 140000,
-                        date: "06/01/2018",
-                    },
-                    {
-                        event: "ComicCon",
-                        city: "San Diego",
-                        state: "California",
-                        attendance: 150000,
-                        date: "06/01/2019",
-                    },
-                    {
-                        event: "HeroesCon",
-                        city: "Charlotte",
-                        state: "North Carolina",
-                        attendance: 40000,
-                        date: "06/01/2017",
-                    },
-                    {
-                        event: "HeroesCon",
-                        city: "Charlotte",
-                        state: "North Carolina",
-                        attendance: 45000,
-                        date: "06/01/2018",
-                    },
-                    {
-                        event: "HeroesCon",
-                        city: "Charlotte",
-                        state: "North Carolina",
-                        attendance: 50000,
-                        date: "06/01/2019",
-                    },
-                    ];
-                    
                     function buildDropdown() {
                         // get the dropdown menu from the page
                         let dropdownMenu = document.getElementById('eventDropdown');
@@ -321,6 +250,47 @@
                     
                 </code>
             </pre>
+            </div>
+            <!--Code Description-->
+            <div class="col">
+                <p>The code is structured in seven functions.</p>
+                <h5><code>buildDropdown()</code></h5>
+                <p>This function builds the drop down menu using eventData and calls on other functions to display
+                    information
+                    on the page depending on what the user selects in the dropdown menu.
+                </p>
+
+                <h5><code>displayStats(eventsArray)</code></h5>
+                <p>This function displays the event stats on the page, specifically the total, average, most and least.
+                    It also
+                    works to display these values as whole numbers rather than decimals.
+                </p>
+
+                <h5><code>calculateStats(eventsArray)</code></h5>
+                <p>This function calculates the attendance. It calculates the total, average, most and least
+                    attendance depending on the data that is passed into the function. It then returns
+                    the calculated stats.
+                </p>
+
+                <h5><code>displayEventData(eventsArray)</code></h5>
+                <p>This function displays the event data in a table using a template provided
+                    in the html. Each different piece of data is passed into the table and displayed
+                    properly.
+                </p>
+
+                <h5><code>getEventData()</code></h5>
+                <p>This function gets the event data that's being stored locally on the user's browser.
+                    It then returns the data as currentEvents.
+                </p>
+
+                <h5><code>getEvents(element)</code></h5>
+                <p>This function takes the provided events and then filters them depending on filters set by the user.
+                </p>
+
+                <h5><code>saveEventData()</code></h5>
+                <p>This function saves each piece of data locally so that the user may use it again in the
+                    future.
+                </p>
             </div>
         </div>
     </main>
